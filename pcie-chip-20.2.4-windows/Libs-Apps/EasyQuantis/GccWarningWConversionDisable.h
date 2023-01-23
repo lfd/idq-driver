@@ -1,0 +1,16 @@
+/*
+ * Copyright (C) 2004-2020 ID Quantique SA.  All Rights Reserved.
+ *
+ * THIS COMPUTER PROGRAM IS PROPRIETARY AND CONFIDENTIAL TO ID QUANTIQUE SA
+ * AND ITS LICENSORS AND CONTAINS TRADE SECRETS OF ID QUANTIQUE SA THAT ARE
+ * PROVIDED PURSUANT TO A WRITTEN AGREEMENT CONTAINING RESTRICTIONS ON USE
+ * AND DISCLOSURE. ANY USE, REPRODUCTION, OR TRANSFER EXCEPT AS PROVIDED IN
+ * SUCH AGREEMENT IS STRICTLY PROHIBITED.
+ */
+
+#if defined(__GNUC__) && !defined(__INTEL_COMPILER)
+  // Ignores "warning: conversion to ‘short unsigned int’ from ‘int’ may alter its value"
+  #pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
+

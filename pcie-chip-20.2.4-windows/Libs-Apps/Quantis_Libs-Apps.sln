@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{13328C06-7043-4849-97D7-D253C65C1EF2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Quantis-NoHw", "Quantis\Quantis-NoHw.vcxproj", "{BBF78578-83CC-49F0-87B4-B5CB810CCC8A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Quantis", "Quantis\Quantis.vcxproj", "{575DD0D0-8D9C-493C-BCE4-432DE559C5F6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuantisUsb-Compat", "Quantis\QuantisUsb-Compat.vcxproj", "{575DD0D0-8D9C-493C-BCE4-432DE559C5F7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuantisPci-Compat", "Quantis\QuantisPci-Compat.vcxproj", "{575DD0D0-8D9C-493C-BCE4-432DE559C5F8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EasyQuantis", "EasyQuantis\EasyQuantis.vcxproj", "{0DCA2AEF-D89E-4AF2-9E73-E3EB3B7FD1FC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuantisExtensions", "QuantisExtensions\QuantisExtensions.vcxproj", "{20769897-CCBC-48BA-B593-7608F14219BB}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EasyQuantis-Setup", "EasyQuantis-Setup\EasyQuantis-Setup.vdproj", "{3017101C-71EF-421D-B153-3B5397610BF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBF78578-83CC-49F0-87B4-B5CB810CCC8A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BBF78578-83CC-49F0-87B4-B5CB810CCC8A}.Debug|x64.ActiveCfg = Debug|x64
+		{BBF78578-83CC-49F0-87B4-B5CB810CCC8A}.Release|Win32.ActiveCfg = Release|Win32
+		{BBF78578-83CC-49F0-87B4-B5CB810CCC8A}.Release|Win32.Build.0 = Release|Win32
+		{BBF78578-83CC-49F0-87B4-B5CB810CCC8A}.Release|x64.ActiveCfg = Release|x64
+		{BBF78578-83CC-49F0-87B4-B5CB810CCC8A}.Release|x64.Build.0 = Release|x64
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F6}.Debug|Win32.Build.0 = Debug|Win32
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F6}.Debug|x64.ActiveCfg = Debug|x64
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F6}.Release|Win32.ActiveCfg = Release|Win32
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F6}.Release|Win32.Build.0 = Release|Win32
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F6}.Release|x64.ActiveCfg = Release|x64
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F6}.Release|x64.Build.0 = Release|x64
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F7}.Debug|x64.ActiveCfg = Debug|x64
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F7}.Release|Win32.ActiveCfg = Release|Win32
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F7}.Release|Win32.Build.0 = Release|Win32
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F7}.Release|x64.ActiveCfg = Release|x64
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F7}.Release|x64.Build.0 = Release|x64
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F8}.Debug|x64.ActiveCfg = Debug|x64
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F8}.Release|Win32.ActiveCfg = Release|Win32
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F8}.Release|Win32.Build.0 = Release|Win32
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F8}.Release|x64.ActiveCfg = Release|x64
+		{575DD0D0-8D9C-493C-BCE4-432DE559C5F8}.Release|x64.Build.0 = Release|x64
+		{0DCA2AEF-D89E-4AF2-9E73-E3EB3B7FD1FC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0DCA2AEF-D89E-4AF2-9E73-E3EB3B7FD1FC}.Debug|x64.ActiveCfg = Debug|x64
+		{0DCA2AEF-D89E-4AF2-9E73-E3EB3B7FD1FC}.Release|Win32.ActiveCfg = Release|Win32
+		{0DCA2AEF-D89E-4AF2-9E73-E3EB3B7FD1FC}.Release|Win32.Build.0 = Release|Win32
+		{0DCA2AEF-D89E-4AF2-9E73-E3EB3B7FD1FC}.Release|x64.ActiveCfg = Release|x64
+		{20769897-CCBC-48BA-B593-7608F14219BB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{20769897-CCBC-48BA-B593-7608F14219BB}.Debug|x64.ActiveCfg = Debug|x64
+		{20769897-CCBC-48BA-B593-7608F14219BB}.Release|Win32.ActiveCfg = Release|Win32
+		{20769897-CCBC-48BA-B593-7608F14219BB}.Release|Win32.Build.0 = Release|Win32
+		{20769897-CCBC-48BA-B593-7608F14219BB}.Release|x64.ActiveCfg = Release|x64
+		{20769897-CCBC-48BA-B593-7608F14219BB}.Release|x64.Build.0 = Release|x64
+		{3017101C-71EF-421D-B153-3B5397610BF0}.Debug|Win32.ActiveCfg = Debug
+		{3017101C-71EF-421D-B153-3B5397610BF0}.Debug|Win32.Build.0 = Debug
+		{3017101C-71EF-421D-B153-3B5397610BF0}.Debug|x64.ActiveCfg = Debug
+		{3017101C-71EF-421D-B153-3B5397610BF0}.Debug|x64.Build.0 = Debug
+		{3017101C-71EF-421D-B153-3B5397610BF0}.Release|Win32.ActiveCfg = Release
+		{3017101C-71EF-421D-B153-3B5397610BF0}.Release|Win32.Build.0 = Release
+		{3017101C-71EF-421D-B153-3B5397610BF0}.Release|x64.ActiveCfg = Release
+		{3017101C-71EF-421D-B153-3B5397610BF0}.Release|x64.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F096B257-F371-4F2F-BC4A-5811D3E904D7}
+		QtVersion = 4.7.3
+	EndGlobalSection
+EndGlobal

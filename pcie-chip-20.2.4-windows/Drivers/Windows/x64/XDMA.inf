@@ -1,0 +1,127 @@
+;/*++
+;
+;Copyright (c) Xilinx  All rights reserved.
+;
+;   THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+;   KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+;   IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+;   PURPOSE.
+;
+;Module Name:
+;
+;    XDMA.inf
+;
+;Abstract:
+;    INF file for a XDMA device.
+;
+;--*/
+
+[Version]
+CatalogFile               = XDMA.cat
+Class                     = %ClassName%
+ClassGuid                 = {a3a4c1ce-5a80-452c-9b51-a98edd3378d1}
+DriverPackageDisplayName  = %XDMA.DRVDESC%
+DriverPackageType         = PlugAndPlay
+DriverVer = 04/01/2022,17.19.47.345
+Provider                  = %Companyname%
+Signature                 = "$WINDOWS NT$"
+
+[DestinationDirs]
+DefaultDestDir  = 12
+CoInstaller_CopyFiles = 11
+
+; ====================== Class Section ========================================
+[ClassInstall32]
+Addreg		= XDMA.ClassReg
+
+[XDMA.ClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+HKR,,DeviceCharacteristics,0x10001,0x100     ;Use same security checks on relative opens
+HKR,,Security,,"D:P(A;;GA;;;SY)(A;;GA;;;BA)(A;;GRGW;;;WD)" ;Allow generic all access to system, built-in Admin and World
+
+; ====================== Device Install Section ===============================
+[ControlFlags]
+ExcludeFromSelect = *
+
+[Manufacturer]
+%Companyname%=ID Quantique SA,NTamd64
+
+[SourceDisksFiles]
+XDMA.sys    = 1
+;
+
+
+[SourceDisksNames]
+1="XDMA Install Disk",
+
+; For XP and later
+[ID Quantique SA.NTamd64]
+; DisplayName           Section			DeviceId
+; -----------           -------			--------
+%XDMA.DRVDESC2%=			XDMA_Inst,		PCI\VEN_1e89&DEV_0002
+%XDMA.DRVDESC12%=			XDMA_Inst,		PCI\VEN_1e89&DEV_0003
+
+
+[XDMA_Inst.NT]
+CopyFiles      = XDMA.CopyFiles
+
+[XDMA.CopyFiles]
+XDMA.sys
+
+; MSI/MSI-X support
+[XDMA_Inst.NT.HW]
+AddReg = XDMA.EnableMSI
+
+; 24 Interrupt resources are required - 16 for user events and 8 for dma channels
+[XDMA.EnableMSI]
+HKR,"Interrupt Management",,0x00000010
+HKR,"Interrupt Management\MessageSignaledInterruptProperties",,0x00000010
+HKR,"Interrupt Management\MessageSignaledInterruptProperties",MSISupported,0x00010001,1
+HKR,"Interrupt Management\MessageSignaledInterruptProperties",MessageNumberLimit,0x00010001,32
+
+
+[XDMA_Inst.NT.Services]
+AddService     = XDMA,0x00000002,XDMA_Service
+
+[XDMA_Service]
+DisplayName    = %XDMA.SVCDESC%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\XDMA.sys
+AddReg         = XDMA_Inst.NT.Services.AddReg
+
+[XDMA_Inst.NT.Services.AddReg]
+HKR,Parameters,"POLL_MODE",0x00010001,0 ; set to 1 for hardware polling, default is 0 (interrupts)
+
+; ====================== WDF Coinstaller installation =========================
+
+[XDMA_Inst.NT.CoInstallers]
+AddReg         = CoInstaller_AddReg
+CopyFiles      = CoInstaller_CopyFiles
+
+[CoInstaller_AddReg]
+;
+
+
+[CoInstaller_CopyFiles]
+;
+
+
+[XDMA_Inst.NT.Wdf]
+KmdfService    = XDMA, XDMA_wdfsect
+
+[XDMA_wdfsect]
+KmdfLibraryVersion = 1.15
+
+;======================= String Definitions ===================================
+[Strings]
+Companyname				= "ID Quantique SA"
+ClassName				= "ID Quantique SA Drivers"
+XDMA.SVCDESC			= "ID Quantique SA QNRG Driver Service"
+XDMA.DRVDESC			= "Quantis PCIe"
+XDMA.DRVDESC2			= "Quantis PCIe 40M"
+XDMA.DRVDESC12			= "Quantis PCIe 240M"
+DeviceDescription		= "ID Quantique SA FPGA device"
+
